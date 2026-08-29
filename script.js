@@ -8,6 +8,7 @@ const form = document.querySelector('[data-contact-form]');
 const year = document.querySelector('[data-year]');
 
 const setMenu = (open) => {
+  if (!menuButton || !nav || !header) return;
   menuButton.setAttribute('aria-expanded', String(open));
   nav.classList.toggle('is-open', open);
   header.classList.toggle('is-open', open);
@@ -15,13 +16,14 @@ const setMenu = (open) => {
 };
 
 const toggleMenu = () => {
+  if (!menuButton) return;
   setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
 };
 
 navLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+  if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
     setMenu(false);
     menuButton.focus();
   }
@@ -31,7 +33,7 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 900) setMenu(false);
 });
 
-const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+const syncHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
 syncHeader();
 window.addEventListener('scroll', syncHeader, { passive: true });
 
@@ -50,6 +52,7 @@ if ('IntersectionObserver' in window) {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       navLinks.forEach((link) => {
+        if (link.getAttribute('aria-current') === 'page') return;
         const isCurrent = link.getAttribute('href') === `#${entry.target.id}`;
         if (isCurrent) link.setAttribute('aria-current', 'true');
         else link.removeAttribute('aria-current');
@@ -62,7 +65,7 @@ if ('IntersectionObserver' in window) {
   reveals.forEach((element) => element.classList.add('is-visible'));
 }
 
-form.addEventListener('submit', (event) => {
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const input = form.querySelector('input[type="email"]');
   const message = form.querySelector('.form-message');
@@ -84,4 +87,4 @@ form.addEventListener('submit', (event) => {
   form.reset();
 });
 
-year.textContent = new Date().getFullYear();
+if (year) year.textContent = new Date().getFullYear();

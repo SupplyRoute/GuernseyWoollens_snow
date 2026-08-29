@@ -285,6 +285,87 @@ p { max-width: 40ch; }
 .site-footer p { margin: 0; font-size: 0.65rem; }
 .wordmark--footer { align-items: flex-end; }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  min-height: 100svh;
+  color: var(--cream);
+  background: var(--ink);
+}
+
+.about-hero__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 9rem var(--gutter) clamp(3.5rem, 8vh, 7rem);
+}
+
+.about-hero h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 6.5vw, 7.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.075em;
+}
+
+.about-hero__lede { margin: 2rem 0 0; font-size: 0.8rem; letter-spacing: 0.04em; }
+.about-hero__portrait { position: relative; min-height: 100svh; margin: 0; overflow: hidden; }
+.about-hero__portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--ink) 35%, transparent), transparent 40%); pointer-events: none; }
+.about-hero__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; animation: hero-zoom 16s var(--ease) both; }
+.about-hero__portrait figcaption { position: absolute; z-index: 1; right: 1.5rem; bottom: 1.4rem; padding: 0.45rem 0.7rem; color: var(--cream); background: var(--ink); font-size: 0.62rem; letter-spacing: 0.08em; }
+
+.about-story { max-width: var(--max); margin: 0 auto; }
+.about-story__grid { display: grid; grid-template-columns: minmax(18rem, 0.9fr) 1.1fr; gap: clamp(4rem, 10vw, 11rem); }
+.about-story__heading { position: sticky; top: 8rem; align-self: start; }
+.about-story__body { display: grid; gap: 2rem; }
+.about-story__body p { margin: 0; font-size: clamp(0.98rem, 1.25vw, 1.12rem); }
+
+.about-belief { color: var(--cream); background: var(--ink); }
+.about-belief__inner { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: clamp(3rem, 9vw, 10rem); max-width: var(--max); margin: 0 auto; }
+.about-belief__inner > .eyebrow { grid-column: 1 / -1; color: var(--cream); }
+.about-quote { margin: 0; }
+.about-quote p { max-width: 16ch; margin: 0; font-family: var(--display); font-size: clamp(2.9rem, 5.5vw, 6.5rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.065em; }
+.about-quote footer { margin-top: 2.25rem; color: var(--terra); font-size: 0.72rem; letter-spacing: 0.08em; }
+.about-belief__body { align-self: end; padding-bottom: 0.75rem; }
+.about-belief__body p { margin: 0; font-size: 0.92rem; }
+
+.island-pride { max-width: var(--max); margin: 0 auto; }
+.island-pride__heading { display: grid; grid-template-columns: 0.5fr 1.5fr; align-items: start; gap: 4rem; }
+.island-pride__heading .eyebrow { padding-top: 0.9rem; }
+.island-pride__content { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 7vw, 8rem); max-width: 58rem; margin: max(4rem, 10vh) 0 0 auto; }
+.island-pride__content p { margin: 0; }
+.about-sources { display: grid; grid-template-columns: 0.7fr 1.15fr 1.15fr; margin-top: max(5rem, 12vh); border-top: 1px solid color-mix(in srgb, var(--ink) 24%, transparent); }
+.about-sources > * { padding: 1.2rem 1.2rem 1.2rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 24%, transparent); font-size: 0.7rem; }
+.about-sources a { position: relative; padding-left: 1.2rem; border-left: 1px solid color-mix(in srgb, var(--ink) 24%, transparent); }
+.about-sources a:hover { color: var(--terra); }
+
+.about-timeline { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(4rem, 10vw, 11rem); max-width: var(--max); margin: 0 auto; border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
+.about-timeline__heading { align-self: start; }
+.timeline-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); }
+.timeline-list li { display: grid; grid-template-columns: 6rem 1fr; gap: 2rem; min-height: 12rem; padding: 2rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); }
+.timeline-list time,
+.timeline-list li > span { color: var(--terra); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; }
+.timeline-list h3 { margin: 0 0 0.8rem; font-family: var(--display); font-size: clamp(1.55rem, 2.3vw, 2.5rem); font-weight: 400; letter-spacing: -0.04em; }
+.timeline-list p { margin: 0; font-size: 0.84rem; }
+
+.about-promise { min-height: 88svh; padding: max(7rem, 18vh) var(--gutter); color: var(--cream); background: var(--terra); }
+.about-promise .eyebrow { color: var(--cream); }
+.about-promise h2 { max-width: 17ch; margin: max(4rem, 11vh) 0 3rem; font-family: var(--display); font-size: clamp(3rem, 6vw, 7rem); font-weight: 400; line-height: 1.16; letter-spacing: -0.07em; }
+
 .reveal { opacity: 0; transform: translateY(1.4rem); transition: opacity 760ms var(--ease), transform 760ms var(--ease); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -322,6 +403,11 @@ p { max-width: 40ch; }
   .journal-entry { grid-template-columns: 0.5fr 1.5fr 2rem; }
   .journal-entry p { display: none; }
   .contact { grid-template-columns: 1fr; }
+  .about-hero { grid-template-columns: 1fr 0.72fr; }
+  .about-story__grid { gap: 4rem; }
+  .about-belief__inner { grid-template-columns: 1fr; }
+  .about-belief__body { max-width: 34rem; margin-left: auto; }
+  .island-pride__heading { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 @media (max-width: 640px) {
@@ -367,11 +453,30 @@ p { max-width: 40ch; }
   .contact__details { grid-template-columns: 1fr; margin-top: max(3rem, 8vh); }
   .contact__details div + div { margin-left: 0; }
   .site-footer { grid-template-columns: 1fr; gap: 1.2rem; }
+  .about-hero { grid-template-columns: 1fr; grid-template-rows: 58svh 42svh; }
+  .about-hero__copy { z-index: 1; grid-row: 1; padding-top: 7rem; padding-bottom: 2.5rem; }
+  .about-hero h1 { font-size: clamp(2.9rem, 12.2vw, 4rem); }
+  .about-hero__lede { margin-top: 1.4rem; }
+  .about-hero__portrait { grid-row: 2; min-height: 42svh; }
+  .about-hero__portrait::after { background: linear-gradient(180deg, var(--ink), transparent 35%); }
+  .about-hero__portrait img { object-position: center 36%; }
+  .about-story__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-story__heading { position: static; }
+  .about-quote p { font-size: clamp(2.65rem, 11.5vw, 3.8rem); }
+  .about-belief__body { margin-left: 0; }
+  .island-pride__content { grid-template-columns: 1fr; gap: 1.5rem; margin-top: max(3rem, 8vh); }
+  .about-sources { grid-template-columns: 1fr; }
+  .about-sources a { padding-left: 0; border-left: 0; }
+  .about-timeline { grid-template-columns: 1fr; gap: 3rem; }
+  .timeline-list li { grid-template-columns: 4.5rem 1fr; gap: 1rem; }
+  .about-promise { min-height: 82svh; }
+  .about-promise h2 { margin-top: max(3rem, 8vh); font-size: clamp(2.75rem, 12vw, 4rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero__image { animation: none; transform: none; }
+  .about-hero__portrait img { animation: none; transform: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 

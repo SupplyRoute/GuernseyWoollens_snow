@@ -14,7 +14,8 @@ python -m http.server 8000
 
 ## 파일
 
-- `index.html` — 모든 페이지 콘텐츠
+- `index.html` — 홈과 브랜드·제품·이야기·연락 콘텐츠
+- `about.html` — 인터뷰를 바탕으로 쓴 1인칭 내 소개 페이지
 - `styles.css` — 디자인과 반응형 레이아웃
 - `script.js` — 모바일 메뉴, 스크롤 상태, 폼 안내
 - `assets/` — 생성된 브랜드 이미지
