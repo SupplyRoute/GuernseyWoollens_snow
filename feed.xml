@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>건지울른스 이야기</title>
+    <link>https://guernsey-woollens.vercel.app/story/</link>
+    <description>건지섬의 피셔맨 니트와 브리티시 울, 오래 입는 옷에 관한 기록</description>
+    <language>ko</language>
+    <lastBuildDate>Fri, 28 Aug 2026 15:00:00 GMT</lastBuildDate>
+    <item>
+      <title>건지 니트는 겨울이 지나면 어떻게 보관하나요?</title>
+      <link>https://guernsey-woollens.vercel.app/story/how-to-store-guernsey-knit.html</link>
+      <description>울 니트를 깨끗이 정리하고 형태를 지키며 다음 계절까지 보관하는 순서를 안내합니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://guernsey-woollens.vercel.app/story/how-to-store-guernsey-knit.html</guid>
+    </item>
+    <item>
+      <title>처음 건지 니트를 한국에 소개할 때 무엇이 가장 어려웠나요?</title>
+      <link>https://guernsey-woollens.vercel.app/story/introducing-guernsey-knit-to-korea.html</link>
+      <description>가격도 무게도 가볍지 않은 낯선 니트를 제품의 이유만으로 설명해야 했던 첫 시작을 돌아봅니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://guernsey-woollens.vercel.app/story/introducing-guernsey-knit-to-korea.html</guid>
+    </item>
+    <item>
+      <title>전통 건지 스웨터는 일반 울 니트와 무엇이 다른가요?</title>
+      <link>https://guernsey-woollens.vercel.app/story/traditional-guernsey-sweater-difference.html</link>
+      <description>100% 브리티시 울, 촘촘한 편직과 움직임을 고려한 구조가 전통 건지 스웨터의 차이를 만듭니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://guernsey-woollens.vercel.app/story/traditional-guernsey-sweater-difference.html</guid>
+    </item>
+    <item>
+      <title>왜 건지울른스를 한국에 소개하기 시작했나요?</title>
+      <link>https://guernsey-woollens.vercel.app/story/why-we-introduced-guernsey-woollens.html</link>
+      <description>2019년 일본 편집숍에서 만난 묵직한 니트 한 벌이 어떻게 한국 소개의 시작이 되었는지 기록합니다.</description>
+      <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://guernsey-woollens.vercel.app/story/why-we-introduced-guernsey-woollens.html</guid>
+    </item>
+    <item>
+      <title>건지 니트는 실제로 물을 잘 튕기나요?</title>
+      <link>https://guernsey-woollens.vercel.app/story/is-guernsey-knit-water-resistant.html</link>
+      <description>울 섬유의 표면 구조와 촘촘한 편직이 물방울의 침투를 늦추지만 방수복과는 다른 이유를 설명합니다.</description>
+      <pubDate>Thu, 13 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://guernsey-woollens.vercel.app/story/is-guernsey-knit-water-resistant.html</guid>
+    </item>
+  </channel>
+</rss>

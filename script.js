@@ -183,6 +183,31 @@ const loadProducts = async () => {
       return;
     }
 
+    if (document.body.contains(document.querySelector('.product-page'))) {
+      const productSchema = document.createElement('script');
+      productSchema.type = 'application/ld+json';
+      productSchema.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: products.map((product, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Product',
+            name: String(product.name || '제품명 준비 중'),
+            image: product.image ? new URL(product.image, window.location.href).href : undefined,
+            offers: product.purchaseUrl && typeof product.price === 'number' ? {
+              '@type': 'Offer',
+              priceCurrency: 'KRW',
+              price: product.price,
+              url: getPurchaseUrl(product.purchaseUrl),
+            } : undefined,
+          },
+        })),
+      });
+      document.head.append(productSchema);
+    }
+
     productLists.forEach((list) => {
       const limit = Number.parseInt(list.dataset.productLimit || '', 10);
       const headingLevel = Number.parseInt(list.dataset.productHeading || '3', 10);

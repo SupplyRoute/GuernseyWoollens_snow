@@ -1,0 +1,22 @@
+# 건지울른스
+
+건지울른스는 건지섬의 피셔맨 니트와 브리티시 울이 지닌 역사와 쓰임을 한국에 소개합니다.
+
+## 파는 것
+
+헤리티지 피셔맨 니트와 가디건을 비롯한 건지울른스 컬렉션을 판매합니다.
+
+## 페이지 안내
+
+- [홈](https://guernsey-woollens.vercel.app/): 브랜드와 대표 제품
+- [제품](https://guernsey-woollens.vercel.app/products.html): 현재 판매 제품과 구매 링크
+- [내 소개](https://guernsey-woollens.vercel.app/about.html): 건지울른스를 한국에 소개하게 된 이야기
+- [이야기](https://guernsey-woollens.vercel.app/story/): 소재, 관리법과 브랜드 기록
+
+## 이야기(블로그)
+
+- [건지 니트는 겨울이 지나면 어떻게 보관하나요?](https://guernsey-woollens.vercel.app/story/how-to-store-guernsey-knit.html): 울 니트를 깨끗이 정리하고 형태를 지키며 다음 계절까지 보관하는 순서를 안내합니다.
+- [처음 건지 니트를 한국에 소개할 때 무엇이 가장 어려웠나요?](https://guernsey-woollens.vercel.app/story/introducing-guernsey-knit-to-korea.html): 가격도 무게도 가볍지 않은 낯선 니트를 제품의 이유만으로 설명해야 했던 첫 시작을 돌아봅니다.
+- [전통 건지 스웨터는 일반 울 니트와 무엇이 다른가요?](https://guernsey-woollens.vercel.app/story/traditional-guernsey-sweater-difference.html): 100% 브리티시 울, 촘촘한 편직과 움직임을 고려한 구조가 전통 건지 스웨터의 차이를 만듭니다.
+- [왜 건지울른스를 한국에 소개하기 시작했나요?](https://guernsey-woollens.vercel.app/story/why-we-introduced-guernsey-woollens.html): 2019년 일본 편집숍에서 만난 묵직한 니트 한 벌이 어떻게 한국 소개의 시작이 되었는지 기록합니다.
+- [건지 니트는 실제로 물을 잘 튕기나요?](https://guernsey-woollens.vercel.app/story/is-guernsey-knit-water-resistant.html): 울 섬유의 표면 구조와 촘촘한 편직이 물방울의 침투를 늦추지만 방수복과는 다른 이유를 설명합니다.
