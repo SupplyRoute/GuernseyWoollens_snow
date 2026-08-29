@@ -1,20 +1,182 @@
 [
   {
-    "name": "건지 가디건 · Ink Navy",
-    "price": "출시 예정",
-    "image": "assets/hero-cardigan.png",
-    "purchaseUrl": ""
+    "name": "건지울른스 브리티쉬 아미 M65 쇼츠 - 올리브",
+    "price": 128000,
+    "image": "https://shop-phinf.pstatic.net/20260413_55/1776049797190ELUBw_JPEG/25628953079266449_54864460.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/13392802302"
   },
   {
-    "name": "건지 가디건 · Raw Oat",
-    "price": "출시 예정",
-    "image": "assets/collection.png",
-    "purchaseUrl": ""
+    "name": "건지울른스 그랑 로크 페어아일 코튼 브이넥 베스트 컬렉션",
+    "price": 118000,
+    "image": "https://shop-phinf.pstatic.net/20260413_206/1776048592668rNmbg_JPEG/44065428790419541_757603435.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/13392748584"
   },
   {
-    "name": "건지 가디건 · Sea Moss",
-    "price": "출시 예정",
-    "image": "assets/guernsey-harbour.png",
-    "purchaseUrl": ""
+    "name": "건지울른스 스웻 카라 반팔 티셔츠 컬렉션",
+    "price": 78000,
+    "image": "https://shop-phinf.pstatic.net/20260413_255/1776044840025dz2Qz_JPEG/104250978829423162_51333318.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/13392577111"
+  },
+  {
+    "name": "건지울른스 캐시미어 블렌드 포켓 카라 니트 - 네이비",
+    "price": 138000,
+    "image": "https://shop-phinf.pstatic.net/20260226_95/1772095447141bOT35_JPEG/54173639605476340_1174626902.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/13110548884"
+  },
+  {
+    "name": "건지울른스 피셔맨 하프 집업 스웨터 - 아란",
+    "price": 318000,
+    "image": "https://shop-phinf.pstatic.net/20260115_35/1768442478887Vgyrs_JPEG/102575291985441100_1481644768.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12971907303"
+  },
+  {
+    "name": "건지울른스 피셔맨 홀가먼트 스웨터 - 미드 그레이",
+    "price": 268000,
+    "image": "https://shop-phinf.pstatic.net/20260115_164/17684423498858GuDP_JPEG/10954084843497046_2020985594.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12971898607"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 앵커 머플러 - 블랙",
+    "price": 68000,
+    "image": "https://shop-phinf.pstatic.net/20251031_55/1761901138156cxC4k_JPEG/96034101278854537_462176161.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12617630602"
+  },
+  {
+    "name": "건지울른스 알파카 브이넥 가디건 - 블랙",
+    "price": 198000,
+    "image": "https://shop-phinf.pstatic.net/20251031_286/17618986991569iXnS_JPEG/96031515256503468_719426879.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12617469920"
+  },
+  {
+    "name": "건지울른스 네프사 새들 스웨터 컬렉션",
+    "price": 178000,
+    "image": "https://shop-phinf.pstatic.net/20251031_192/1761896295898NfYLp_JPEG/37514373365392939_1187805686.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12617300014"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 케이블 스웨터 - 포레스트 그린",
+    "price": 168000,
+    "image": "https://shop-phinf.pstatic.net/20251031_11/1761894567905Oc15y_JPEG/9870560893773060_1902757334.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12617173057"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 새들 스웨터 - 미드나잇 블루",
+    "price": 168000,
+    "image": "https://shop-phinf.pstatic.net/20251031_213/1761893589171poY2f_JPEG/6843146111946551_1027183091.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12617100719"
+  },
+  {
+    "name": "건지울른스 알파카 아가일 가디건 - 블랙",
+    "price": 198000,
+    "image": "https://shop-phinf.pstatic.net/20251031_283/17618930678956qPzt_JPEG/96025884000350881_1087344125.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12617063751"
+  },
+  {
+    "name": "건지울른스 코듀로이 원턱 와이드 팬츠 - 카키",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20251001_199/17592833630733NbUp_JPEG/93416285218513367_861194574.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12486583843"
+  },
+  {
+    "name": "건지울른스 코튼 와이드 치노 팬츠 컬렉션",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20251001_71/1759283102941QXyuv_JPEG/13443042437729932_538636915.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12486565774"
+  },
+  {
+    "name": "건지울른스 건지 더블크로스 스웨터 키링 - 그린",
+    "price": 18000,
+    "image": "https://shop-phinf.pstatic.net/20250930_37/1759197010601CQFgI_JPEG/10768974707076082_1516636904.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12481491104"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 카라 니트 컬렉션",
+    "price": 158000,
+    "image": "https://shop-phinf.pstatic.net/20260417_64/1776391536819PtlOo_JPEG/110524426428097992_1129925305.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12481137157"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 터틀넥 니트 - 블랙",
+    "price": 158000,
+    "image": "https://shop-phinf.pstatic.net/20250929_110/1759143714039WR0kP_JPEG/13589172858276304_1715309659.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478365283"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 카라 니트 - 블랙",
+    "price": 158000,
+    "image": "https://shop-phinf.pstatic.net/20250929_278/1759142842432VWVP8_JPEG/93275715548851152_1541091864.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478311279"
+  },
+  {
+    "name": "건지울른스 헤비코튼 케이블 하프 집업 스웨터 - 베이지",
+    "price": 158000,
+    "image": "https://shop-phinf.pstatic.net/20250929_126/1759141373582CoMqC_JPEG/13586832378682106_1464822777.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478226517"
+  },
+  {
+    "name": "건지울른스 셔틀랜드울 쉐기독 홀가먼트 스웨터 - 모스 브라운",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20250929_88/1759139998154BzABz_JPEG/93272920276149122_834366070.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478149134"
+  },
+  {
+    "name": "건지울른스 셔틀랜드울 쉐기독 홀가먼트 스웨터 - 커스터드",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20250929_104/1759139868769Uepek_JPEG/93272759885724452_680407702.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478141549"
+  },
+  {
+    "name": "건지울른스 셔틀랜드울 쉐기독 홀가먼트 스웨터 - 그레이프주스",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20250929_37/1759139618155W7pqL_JPEG/68960711961271986_1488467277.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478126477"
+  },
+  {
+    "name": "건지울른스 셔틀랜드울 쉐기독 홀가먼트 스웨터 - 블랙 페퍼",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20250929_37/1759139120669finUW_JPEG/79764049707757341_722726322.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478097265"
+  },
+  {
+    "name": "건지울른스 셔틀랜드울 쉐기독 홀가먼트 스웨터 - 던 그레이",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20250929_253/1759139000484fNHip_JPEG/93271873579727518_1527851841.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478089888"
+  },
+  {
+    "name": "건지울른스 셔틀랜드울 쉐기독 홀가먼트 스웨터 - 살몬 오렌지",
+    "price": 148000,
+    "image": "https://shop-phinf.pstatic.net/20250929_194/17591388782445pxJF_JPEG/93271749370087070_883104073.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12478082349"
+  },
+  {
+    "name": "건지울른스 슈퍼 파인 메리노울 브이넥 가디건 - 네이비",
+    "price": 188000,
+    "image": "https://shop-phinf.pstatic.net/20250929_187/1759134450227gcOJy_JPEG/76461381739419598_628729322.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12477787468"
+  },
+  {
+    "name": "건지울른스 코튼 케이블 스웨터 컬렉션",
+    "price": 138000,
+    "image": "https://shop-phinf.pstatic.net/20250829_277/175646519403057wJd_JPEG/81853558719450519_757581302.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12321580285"
+  },
+  {
+    "name": "건지울른스 옥스포드 브리티쉬 아미 셔츠 - 라이트 블루",
+    "price": 128000,
+    "image": "https://shop-phinf.pstatic.net/20250829_75/17564628263305sDPf_JPEG/9162457459378534_20253159.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/12321442183"
+  },
+  {
+    "name": "건지울른스 코튼 반팔 크루넥 니트 컬렉션",
+    "price": 98000,
+    "image": "https://shop-phinf.pstatic.net/20250408_72/1744080206117TmfE0_JPEG/78213077203083956_557977881.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/10472445310"
+  },
+  {
+    "name": "건지울른스 그랑 로크 페어아일 코튼 브이넥 베스트 - 올리브",
+    "price": 118000,
+    "image": "https://shop-phinf.pstatic.net/20260413_122/1776048482273tGjev_JPEG/7750505167153505_1451441744.jpg?type=f750_750",
+    "purchaseUrl": "https://brand.naver.com/guernseywoollens/products/13392743275"
   }
 ]
