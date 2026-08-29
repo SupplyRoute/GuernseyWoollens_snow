@@ -6,7 +6,7 @@ const storyDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.dirname(storyDir);
 const site = 'https://guernsey-woollens.vercel.app';
 const posts = JSON.parse(await readFile(path.join(storyDir, 'posts.json'), 'utf8'));
-const pages = ['index.html', 'about.html', 'products.html', 'story/index.html', ...posts.map((post) => `story/${post.url}`)];
+const pages = ['index.html', 'about.html', 'products.html', 'contact.html', 'story/index.html', ...posts.map((post) => `story/${post.url}`)];
 const htmls = new Map(await Promise.all(pages.map(async (file) => [file, await readFile(path.join(root, file), 'utf8')])));
 const match = (html, pattern) => html.match(pattern)?.[1]?.trim() || '';
 const title = (html) => match(html, /<title>([\s\S]*?)<\/title>/i);

@@ -35,9 +35,9 @@ const header = `<a class="skip-link" href="#main">본문으로 바로가기</a>
     <header class="site-header is-scrolled" data-header data-solid-header>
       <a class="wordmark" href="../index.html#home" aria-label="건지울른스 홈"><span>건지울른스</span><small>GEONJIULLEUNS</small></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button onclick="toggleMenu()"><span class="menu-button__label">메뉴</span><span class="menu-button__lines" aria-hidden="true"><i></i><i></i></span></button>
-      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-nav><a href="../index.html#home">홈</a><a href="../index.html#guernsey">건지 니트</a><a href="../products.html">제품</a><a href="index.html" aria-current="page">이야기</a><a href="../about.html">내 소개</a><a href="../index.html#contact">연락하기</a></nav>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-nav><a href="../index.html#home">홈</a><a href="../index.html#guernsey">건지 니트</a><a href="../products.html">제품</a><a href="index.html" aria-current="page">이야기</a><a href="../about.html">내 소개</a><a href="../contact.html">연락하기</a></nav>
     </header>`;
-const footer = `<footer class="site-footer"><a class="wordmark wordmark--footer" href="../index.html#home"><span>건지울른스</span><small>GEONJIULLEUNS</small></a><p>섬의 태도와 오래 입는 옷.</p><p>© <span data-year></span> GEONJIULLEUNS</p></footer>`;
+const footer = `<footer class="site-footer"><a class="wordmark wordmark--footer" href="../index.html#home"><span>건지울른스</span><small>GEONJIULLEUNS</small></a><p>섬의 태도와 오래 입는 옷.</p><nav class="footer-links" aria-label="푸터 연락 링크"><a href="mailto:hello@geonjiulleuns.kr" target="_blank" rel="noopener noreferrer">이메일</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">SNS</a></nav><p>© <span data-year></span> GEONJIULLEUNS</p></footer>`;
 
 for (const [index, post] of posts.entries()) {
   if (!post.url || !Array.isArray(post.faq) || post.faq.length !== 3 || !post.author || !post.sources?.length) {
@@ -110,7 +110,7 @@ for (const [index, post] of posts.entries()) {
 }
 
 const publicPages = [
-  ['', '2026-08-29'], ['about.html', '2026-08-29'], ['products.html', '2026-08-29'], ['story/', '2026-08-29'],
+  ['', '2026-08-29'], ['about.html', '2026-08-29'], ['products.html', '2026-08-29'], ['contact.html', '2026-08-29'], ['story/', '2026-08-29'],
   ...posts.map((post) => [`story/${post.url}`, post.updated || post.date]),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicPages.map(([url, date]) => `  <url><loc>${site}/${url}</loc><lastmod>${date}</lastmod></url>`).join('\n')}\n</urlset>\n`;
@@ -120,7 +120,7 @@ const rssDate = (value) => new Date(`${value}T00:00:00+09:00`).toUTCString();
 const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>건지울른스 이야기</title>\n    <link>${site}/story/</link>\n    <description>건지섬의 피셔맨 니트와 브리티시 울, 오래 입는 옷에 관한 기록</description>\n    <language>ko</language>\n    <lastBuildDate>${rssDate(posts[0].updated || posts[0].date)}</lastBuildDate>\n${posts.slice(0, 20).map((post) => `    <item>\n      <title>${escapeHtml(post.title)}</title>\n      <link>${absolute(post)}</link>\n      <description>${escapeHtml(post.summary)}</description>\n      <pubDate>${rssDate(post.date)}</pubDate>\n      <guid isPermaLink="true">${absolute(post)}</guid>\n    </item>`).join('\n')}\n  </channel>\n</rss>\n`;
 await writeFile(path.join(rootDir, 'feed.xml'), feed, 'utf8');
 
-const llms = `# 건지울른스\n\n건지울른스는 건지섬의 피셔맨 니트와 브리티시 울이 지닌 역사와 쓰임을 한국에 소개합니다.\n\n## 파는 것\n\n헤리티지 피셔맨 니트와 가디건을 비롯한 건지울른스 컬렉션을 판매합니다.\n\n## 페이지 안내\n\n- [홈](${site}/): 브랜드와 대표 제품\n- [제품](${site}/products.html): 현재 판매 제품과 구매 링크\n- [내 소개](${site}/about.html): 건지울른스를 한국에 소개하게 된 이야기\n- [이야기](${site}/story/): 소재, 관리법과 브랜드 기록\n\n## 이야기(블로그)\n\n${posts.slice(0, 30).map((post) => `- [${post.title}](${absolute(post)}): ${post.summary}`).join('\n')}\n`;
+const llms = `# 건지울른스\n\n건지울른스는 건지섬의 피셔맨 니트와 브리티시 울이 지닌 역사와 쓰임을 한국에 소개합니다.\n\n## 파는 것\n\n헤리티지 피셔맨 니트와 가디건을 비롯한 건지울른스 컬렉션을 판매합니다.\n\n## 페이지 안내\n\n- [홈](${site}/): 브랜드와 대표 제품\n- [제품](${site}/products.html): 현재 판매 제품과 구매 링크\n- [내 소개](${site}/about.html): 건지울른스를 한국에 소개하게 된 이야기\n- [연락하기](${site}/contact.html): 문의, SNS, 스토어 링크\n- [이야기](${site}/story/): 소재, 관리법과 브랜드 기록\n\n## 이야기(블로그)\n\n${posts.slice(0, 30).map((post) => `- [${post.title}](${absolute(post)}): ${post.summary}`).join('\n')}\n`;
 await writeFile(path.join(rootDir, 'llms.txt'), llms, 'utf8');
 
 await writeFile(path.join(rootDir, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /story/admin.html\n\nSitemap: ${site}/sitemap.xml\n`, 'utf8');

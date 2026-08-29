@@ -11,6 +11,7 @@
 - [홈](https://guernsey-woollens.vercel.app/): 브랜드와 대표 제품
 - [제품](https://guernsey-woollens.vercel.app/products.html): 현재 판매 제품과 구매 링크
 - [내 소개](https://guernsey-woollens.vercel.app/about.html): 건지울른스를 한국에 소개하게 된 이야기
+- [연락하기](https://guernsey-woollens.vercel.app/contact.html): 문의, SNS, 스토어 링크
 - [이야기](https://guernsey-woollens.vercel.app/story/): 소재, 관리법과 브랜드 기록
 
 ## 이야기(블로그)
