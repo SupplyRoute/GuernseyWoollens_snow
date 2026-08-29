@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="건지울른스 이야기">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#1C1A17">
+    <title>이야기 | 건지울른스</title>
+    <link rel="canonical" href="">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="이야기 | 건지울른스">
+    <meta property="og:description" content="건지울른스 이야기">
+    <meta property="og:url" content="">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <header class="site-header is-scrolled" data-header data-solid-header>
+      <a class="wordmark" href="../index.html#home" aria-label="건지울른스 홈">
+        <span>건지울른스</span>
+        <small>GEONJIULLEUNS</small>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button onclick="toggleMenu()">
+        <span class="menu-button__label">메뉴</span>
+        <span class="menu-button__lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-nav>
+        <a href="../index.html#home">홈</a>
+        <a href="../index.html#guernsey">건지 니트</a>
+        <a href="../products.html">제품</a>
+        <a href="index.html" aria-current="page">이야기</a>
+        <a href="../about.html">내 소개</a>
+        <a href="../index.html#contact">연락하기</a>
+      </nav>
+    </header>
+
+    <main class="story-post-page" id="main">
+      <div class="story-post-wrap">
+        <a class="story-back" href="index.html"><span aria-hidden="true">←</span> 이야기 목록</a>
+        <div data-post-content aria-live="polite"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark wordmark--footer" href="../index.html#home"><span>건지울른스</span><small>GEONJIULLEUNS</small></a>
+      <p>섬의 태도와 오래 입는 옷.</p>
+      <p>© <span data-year></span> GEONJIULLEUNS</p>
+    </footer>
+
+    <script>
+      (() => {
+        const content = document.querySelector('[data-post-content]');
+
+        const element = (tag, className, text) => {
+          const node = document.createElement(tag);
+          if (className) node.className = className;
+          if (text !== undefined && text !== null) node.textContent = text;
+          return node;
+        };
+
+        const formatDate = (value) => {
+          if (!value) return '';
+          const date = new Date(`${value}T00:00:00`);
+          if (Number.isNaN(date.getTime())) return String(value);
+          return new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
+        };
+
+        const renderBody = (source) => {
+          const box = element('div', 'story-post__body');
+          const blocks = String(source || '').replace(/\r\n/g, '\n').split(/\n\s*\n/);
+          blocks.forEach((rawBlock) => {
+            const block = rawBlock.trim();
+            if (!block) return;
+            const lines = block.split('\n');
+            if (lines.every((line) => /^- /.test(line.trim()))) {
+              const list = element('ul');
+              lines.forEach((line) => list.append(element('li', null, line.trim().slice(2))));
+              box.append(list);
+            } else if (/^## /.test(block)) {
+              box.append(element('h2', null, block.slice(3).trim()));
+            } else {
+              box.append(element('p', null, block));
+            }
+          });
+          return box;
+        };
+
+        const showNotFound = () => {
+          const box = element('section', 'story-not-found');
+          box.append(element('h1', null, '글을 찾을 수 없습니다'));
+          box.append(element('p', null, '주소가 잘못되었거나 삭제된 글일 수 있습니다.'));
+          const link = element('a', 'text-link', '이야기 목록으로 돌아가기');
+          link.href = 'index.html';
+          box.append(link);
+          content.replaceChildren(box);
+        };
+
+        const hrefOf = (post) => post.url ? String(post.url) : `post.html?id=${encodeURIComponent(post.id || '')}`;
+        const setAttribute = (selector, name, value) => document.querySelector(selector)?.setAttribute(name, value);
+        const addStructuredData = (data) => {
+          const script = document.createElement('script');
+          script.type = 'application/ld+json';
+          script.textContent = JSON.stringify(data);
+          document.head.append(script);
+        };
+
+        const setMetadata = (post) => {
+          const title = String(post.title || '이야기');
+          const description = String(post.description || post.summary || '').slice(0, 160);
+          const dynamicUrl = new URL(`post.html?id=${encodeURIComponent(post.id || '')}`, window.location.href).href;
+          const canonicalUrl = post.url ? new URL(String(post.url), window.location.href).href : dynamicUrl;
+          const author = String(post.author || '').trim();
+
+          document.title = `${title} | 건지울른스`;
+          setAttribute('meta[name="description"]', 'content', description);
+          setAttribute('meta[name="author"]', 'content', author);
+          setAttribute('link[rel="canonical"]', 'href', canonicalUrl);
+          setAttribute('meta[property="og:title"]', 'content', title);
+          setAttribute('meta[property="og:description"]', 'content', description);
+          setAttribute('meta[property="og:url"]', 'content', canonicalUrl);
+
+          const article = {
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: title,
+            description,
+            datePublished: String(post.date || ''),
+            dateModified: String(post.updated || post.date || ''),
+            mainEntityOfPage: canonicalUrl,
+            keywords: Array.isArray(post.tags) ? post.tags.map(String).join(', ') : '',
+          };
+          if (author) article.author = { '@type': 'Person', name: author };
+          addStructuredData(article);
+
+          const faq = Array.isArray(post.faq) ? post.faq.filter((item) => item && item.q && item.a) : [];
+          if (faq.length) {
+            addStructuredData({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faq.map((item) => ({
+                '@type': 'Question',
+                name: String(item.q),
+                acceptedAnswer: { '@type': 'Answer', text: String(item.a) },
+              })),
+            });
+          }
+
+          addStructuredData({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: '홈', item: new URL('../index.html', window.location.href).href },
+              { '@type': 'ListItem', position: 2, name: '이야기', item: new URL('index.html', window.location.href).href },
+              { '@type': 'ListItem', position: 3, name: title, item: canonicalUrl },
+            ],
+          });
+        };
+
+        const renderFaq = (faq) => {
+          const section = element('section', 'story-faq');
+          section.append(element('h2', null, '자주 묻는 질문'));
+          faq.forEach((item) => {
+            const details = element('details');
+            details.append(element('summary', null, String(item.q)));
+            details.append(element('p', null, String(item.a)));
+            section.append(details);
+          });
+          return section;
+        };
+
+        const renderSources = (sources) => {
+          const section = element('section', 'story-sources');
+          section.append(element('h2', null, '참고·출처'));
+          const list = element('ol');
+          sources.forEach((source) => {
+            const item = element('li');
+            if (source && source.url) {
+              const link = element('a', null, String(source.title || source.url));
+              link.href = String(source.url);
+              link.target = '_blank';
+              link.rel = 'noopener';
+              item.append(link);
+            } else {
+              item.textContent = String((source && source.title) || source || '');
+            }
+            list.append(item);
+          });
+          section.append(list);
+          return section;
+        };
+
+        const render = (posts) => {
+          const params = new URLSearchParams(window.location.search);
+          const id = params.get('id') || params.get('slug');
+          const sorted = (Array.isArray(posts) ? posts : []).slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+          const index = sorted.findIndex((post) => String(post.id) === id || (post.url && String(post.url).replace(/\.html$/, '') === id));
+          if (index < 0) {
+            showNotFound();
+            return;
+          }
+
+          const post = sorted[index];
+          setMetadata(post);
+          const article = element('article', 'story-post');
+          const header = element('header', 'story-post__head');
+          const time = element('time', null, formatDate(post.date));
+          time.dateTime = String(post.date || '');
+          header.append(time, element('h1', null, String(post.title || '(제목 없음)')));
+
+          if (post.author || (post.updated && post.updated !== post.date)) {
+            const meta = element('div', 'story-post__meta');
+            if (post.author) meta.append(element('span', null, String(post.author)));
+            if (post.updated && post.updated !== post.date) meta.append(element('span', null, `수정 ${formatDate(post.updated)}`));
+            header.append(meta);
+          }
+
+          if (Array.isArray(post.tags) && post.tags.length) {
+            const tags = element('div', 'story-tags');
+            post.tags.forEach((tag) => tags.append(element('span', 'story-tag', String(tag))));
+            header.append(tags);
+          }
+
+          article.append(header, element('hr', 'story-rule'), renderBody(post.body));
+          const faq = Array.isArray(post.faq) ? post.faq.filter((item) => item && item.q && item.a) : [];
+          if (faq.length) article.append(renderFaq(faq));
+          if (Array.isArray(post.sources) && post.sources.length) article.append(renderSources(post.sources));
+
+          const previous = sorted[index + 1];
+          const next = sorted[index - 1];
+          if (previous || next) {
+            const navigation = element('nav', 'story-pagination');
+            navigation.setAttribute('aria-label', '이전 글과 다음 글');
+            const addLink = (target, className, label) => {
+              if (!target) {
+                navigation.append(element('span'));
+                return;
+              }
+              const link = element('a', className);
+              link.href = hrefOf(target);
+              link.append(element('div', 'story-pagination__direction', label));
+              link.append(element('div', 'story-pagination__title', String(target.title || '')));
+              navigation.append(link);
+            };
+            addLink(previous, '', '이전 글');
+            addLink(next, 'story-pagination__next', '다음 글');
+            article.append(navigation);
+          }
+
+          content.replaceChildren(article);
+        };
+
+        fetch('posts.json', { cache: 'no-store' })
+          .then((response) => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+          })
+          .then(render)
+          .catch(showNotFound);
+      })();
+    </script>
+  </body>
+</html>

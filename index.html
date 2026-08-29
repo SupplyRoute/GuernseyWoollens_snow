@@ -27,7 +27,7 @@
         <a href="#home">홈</a>
         <a href="#guernsey">건지 니트</a>
         <a href="products.html">제품</a>
-        <a href="#journal">이야기</a>
+        <a href="story/">이야기</a>
         <a href="about.html">내 소개</a>
         <a href="#contact">연락하기</a>
       </nav>
@@ -105,28 +105,14 @@
 
       <section class="journal section" id="journal" aria-labelledby="journal-title">
         <div class="journal__heading">
-          <p class="eyebrow reveal">Notes from the shore</p>
-          <h2 id="journal-title" class="display-title reveal">이야기</h2>
+          <div>
+            <p class="eyebrow reveal">Notes from the shore</p>
+            <h2 id="journal-title" class="display-title reveal">이야기</h2>
+          </div>
+          <a class="text-link reveal" href="story/">이야기 더 보기 <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="journal-list">
-          <article class="journal-entry reveal">
-            <span class="journal-entry__date">기록 01 · 읽는 데 4분</span>
-            <h3><a href="#contact">건지 니트는 왜 어깨에 무늬를 남겼을까</a></h3>
-            <p>작업복의 구조에서 시작된 디테일을 살펴봅니다.</p>
-            <span class="journal-entry__arrow" aria-hidden="true">↗</span>
-          </article>
-          <article class="journal-entry reveal">
-            <span class="journal-entry__date">기록 02 · 읽는 데 3분</span>
-            <h3><a href="#contact">울 한 벌을 오래 입는 작은 습관</a></h3>
-            <p>자주 세탁하지 않고도 니트를 산뜻하게 돌보는 법.</p>
-            <span class="journal-entry__arrow" aria-hidden="true">↗</span>
-          </article>
-          <article class="journal-entry reveal">
-            <span class="journal-entry__date">기록 03 · 곧 공개</span>
-            <h3><a href="#contact">섬의 색을 고르는 일</a></h3>
-            <p>잉크 네이비, 로우 오트, 씨 모스가 된 풍경들.</p>
-            <span class="journal-entry__arrow" aria-hidden="true">↗</span>
-          </article>
+        <div class="journal-list reveal" data-story-list data-story-source="story/posts.json" data-story-base="story/" data-story-limit="3" aria-live="polite">
+          <p class="story-status" role="status">이야기를 불러오는 중입니다.</p>
         </div>
       </section>
 

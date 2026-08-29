@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="건지울른스가 전하는 건지섬의 피셔맨 니트, 브리티시 울과 오래 입는 옷에 관한 이야기입니다.">
+    <meta name="theme-color" content="#1C1A17">
+    <title>이야기 | 건지울른스</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <header class="site-header is-scrolled" data-header data-solid-header>
+      <a class="wordmark" href="../index.html#home" aria-label="건지울른스 홈">
+        <span>건지울른스</span>
+        <small>GEONJIULLEUNS</small>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button onclick="toggleMenu()">
+        <span class="menu-button__label">메뉴</span>
+        <span class="menu-button__lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-nav>
+        <a href="../index.html#home">홈</a>
+        <a href="../index.html#guernsey">건지 니트</a>
+        <a href="../products.html">제품</a>
+        <a href="index.html" aria-current="page">이야기</a>
+        <a href="../about.html">내 소개</a>
+        <a href="../index.html#contact">연락하기</a>
+      </nav>
+    </header>
+
+    <main class="story-page" id="main">
+      <div class="story-page__inner">
+        <header class="story-page__head">
+          <div>
+            <p class="eyebrow reveal">Notes from the shore</p>
+            <h1 class="display-title reveal">이야기</h1>
+          </div>
+          <p class="story-page__intro reveal">건지섬의 바다와 브리티시 울, 오래 입는 한 벌에 관한 기록을 천천히 쌓아갑니다.</p>
+        </header>
+
+        <div class="journal-list journal-list--page reveal" data-story-list data-story-source="posts.json" aria-live="polite">
+          <p class="story-status" role="status">이야기를 불러오는 중입니다.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark wordmark--footer" href="../index.html#home"><span>건지울른스</span><small>GEONJIULLEUNS</small></a>
+      <p>섬의 태도와 오래 입는 옷.</p>
+      <p>© <span data-year></span> GEONJIULLEUNS</p>
+    </footer>
+  </body>
+</html>

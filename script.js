@@ -33,7 +33,7 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 900) setMenu(false);
 });
 
-const syncHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
+const syncHeader = () => header?.classList.toggle('is-scrolled', header.hasAttribute('data-solid-header') || window.scrollY > 24);
 syncHeader();
 window.addEventListener('scroll', syncHeader, { passive: true });
 
@@ -195,3 +195,80 @@ const loadProducts = async () => {
 };
 
 loadProducts();
+
+const storyLists = [...document.querySelectorAll('[data-story-list]')];
+
+const formatStoryDate = (value) => {
+  if (!value) return '';
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return new Intl.DateTimeFormat('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+};
+
+const createStoryCard = (post, base = '') => {
+  const card = document.createElement('article');
+  card.className = 'journal-entry';
+
+  const time = document.createElement('time');
+  time.className = 'journal-entry__date';
+  time.dateTime = String(post.date || '');
+  time.textContent = formatStoryDate(post.date);
+
+  const heading = document.createElement('h3');
+  const link = document.createElement('a');
+  const target = post.url
+    ? String(post.url)
+    : `post.html?id=${encodeURIComponent(post.id || '')}`;
+  link.href = `${base}${target}`;
+  link.textContent = String(post.title || '(제목 없음)');
+  heading.append(link);
+
+  const summary = document.createElement('p');
+  summary.textContent = String(post.summary || '');
+
+  const arrow = document.createElement('span');
+  arrow.className = 'journal-entry__arrow';
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+
+  card.append(time, heading, summary, arrow);
+  return card;
+};
+
+const renderStoryStatus = (list, message, isError = false) => {
+  const status = document.createElement('p');
+  status.className = `story-status${isError ? ' is-error' : ''}`;
+  status.setAttribute('role', isError ? 'alert' : 'status');
+  status.textContent = message;
+  list.replaceChildren(status);
+};
+
+const loadStories = async () => {
+  await Promise.all(storyLists.map(async (list) => {
+    const source = list.dataset.storySource || 'story/posts.json';
+    const base = list.dataset.storyBase || '';
+    const limit = Number.parseInt(list.dataset.storyLimit || '', 10);
+
+    try {
+      const response = await fetch(source, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const posts = await response.json();
+      if (!Array.isArray(posts) || posts.length === 0) {
+        renderStoryStatus(list, '첫 번째 이야기를 준비하고 있습니다.');
+        return;
+      }
+
+      const sorted = posts.slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+      const visible = Number.isFinite(limit) ? sorted.slice(0, limit) : sorted;
+      list.replaceChildren(...visible.map((post) => createStoryCard(post, base)));
+    } catch {
+      renderStoryStatus(list, '이야기를 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.', true);
+    }
+  }));
+};
+
+loadStories();
